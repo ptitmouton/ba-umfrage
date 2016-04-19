@@ -1,0 +1,104 @@
+$blue: #428bca;
+
+body {
+	margin-bottom: 80px;
+}
+
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
+
+.bs-callout h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.bs-callout p:last-child {
+    margin-bottom: 0;
+}
+
+.bs-callout code {
+    border-radius: 3px;
+}
+
+.bs-callout+.bs-callout {
+    margin-top: -5px;
+}
+
+.bs-callout-default {
+    border-left-color: #777;
+}
+
+.bs-callout-success {
+    border-left-color: #5cb85c;
+}
+
+.bs-callout-success h4 {
+    color: #5cb85c;
+}
+
+.bs-callout-default h4 {
+    color: #777;
+}
+
+.bs-callout-primary {
+    border-left-color: #428bca;
+}
+
+.bs-callout-primary h4 {
+    color: #428bca;
+}
+
+.input-group-addon.question-text {
+	background-color: white;	
+}
+
+#buttonSubmit {
+	width: 100%;
+	border: 1px solid #428bca;
+	color: #428bca;
+	background-color: #fff;
+	border-radius: 3px;
+	padding: 7px;
+
+	transition: all .4s ease-out;
+	-webkit-transition: all .4s ease-out;
+	-moz-transition: all .4s ease-out;
+	-o-transition: all .4s ease-out;
+
+	&:hover {
+		background-color: #428bca;
+		color: white;
+	}
+}
+
+#windshieldSelection {
+
+	#windshieldOverview {
+		background-image: url('../images/windshield.jpg');
+		background-repeat: no-repeat;
+		background-size: contain;
+		width: 920px;
+		height: 600px;
+		margin: 30px auto;
+		padding: 20px;
+
+		span.draggable {
+			padding: 4px 7px;
+			float: left;
+			border: 1px solid $blue;
+			border-radius: 3px;
+			color: $blue;
+			margin-right: 10px;
+			background-color: white;
+		}
+	}
+}
+
+.clearFix {
+	clear: both;
+}
