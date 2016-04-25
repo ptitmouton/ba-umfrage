@@ -1,0 +1,50 @@
+<div id="<%= @question.id %>" class="question">
+	<div class="bs-callout bs-callout-primary">
+		<h4><%= @question.title %></h4>
+		<p><%= @question.text %></p>
+		<p>position: <%= @question.position %></p>
+
+		<h1>Mögliche Antwort hinzufügen</h1>
+		<!-- hier: zuerst type der answer auswählen, dann Bildupload / mögliche Antworten / Textfeld -->
+		<% case @question.kind %>
+			<% when "selection" %>
+				<%= form_for([@question, @question.s_answers.build]) do |f| %>
+					<p>
+						<%= f.label :title %><br />
+						<%= f.text_field :title %>
+					</p>
+					<p><%= f.submit %></p>
+				<% end %>
+			<% when "image" %> 
+				<%= form_for(@question.ianswers.build) do |f| %>
+					<p>
+						<%= f.label :title %><br />
+						<%= f.text_field :title %>
+					</p>
+					<p><%= f.submit %></p>
+				<% end %>
+			<% when "textfield" %>
+				<%= form_for(@question.tfanswers.build) do |f| %>
+					<p>
+						<%= f.label :title %><br />
+						<%= f.text_area :title %>
+					</p>
+					<p><%= f.submit %></p>
+				<% end %>
+			<% else %>
+				<p>Kein gültiger Typ</p>
+		<% end %>
+		<div class="input-group">
+			<form method="post" action="">
+				<% @question.answers.each do |a| %>
+					<span class="input-group-addon question-text" id="basic-addon1"><%= a.id %><%= a.title %></span>
+					<span class="input-group-addon">
+						<input type="radio" aria-label="question1" name="question1">
+					</span>
+				<% end %>
+			</form>
+		</div>
+	</div>
+</div>
+<%= link_to 'Frage löschen', question_path(@question), method: :delete %>
+<%= link_to 'Übersicht anzeigen', questions_path %>

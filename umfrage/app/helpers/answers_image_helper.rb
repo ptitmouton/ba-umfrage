@@ -1,0 +1,2 @@
+module AnswersImageHelper
+end

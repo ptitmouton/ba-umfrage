@@ -1,0 +1,55 @@
+<div class="row">
+	<div class="col-md-12">
+		<div id="title">
+			<h1>Umfrage Bachelorarbeit</h1>
+		</div>
+	</div>
+	<div class="col-md-12">
+		<div id="description" class="bs-callout bs-callout-default">
+			<h4>Thema</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae ex eos quisquam, culpa consectetur ullam necessitatibus quas, ab mollitia assumenda? Labore necessitatibus fugiat magni aliquid at, aperiam officiis aliquam, optio eveniet iusto qui dolorem illo impedit omnis iure architecto, amet dolore assumenda! Iste veritatis sint voluptatibus temporibus quae, mollitia beatae similique consectetur ipsum aperiam. Quibusdam voluptatibus doloribus quasi explicabo perspiciatis, facilis pariatur ipsum? Ab laboriosam aut cupiditate explicabo modi voluptatem eum qui incidunt, illum tempore vero iste amet ipsum nam totam reiciendis facere quaerat sit maiores numquam, nisi repudiandae itaque voluptates corporis. Similique necessitatibus fugiat quia reiciendis porro laborum laudantium.</p>
+		</div>
+	</div>
+	<div class="col-md-12">
+		<div class="" id="windshieldSelection">
+			<div id="createArea">
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1">Neues Element erstellen</span>
+					<input type="text" class="form-control" placeholder="Namen eingeben" aria-describedby="basic-addon1" id="createDraggableInput">
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="button" id="createDraggable">Erstellen</button>
+					</span>
+				</div>
+			</div>
+			<div id="windshieldOverview">
+				<span class="draggable">Twitter</span>
+				<span class="draggable">SMS</span>
+				<div class="clearFix"></div>
+			</div>
+		</div>
+	</div>
+	<%= link_to 'Frage hinzufügen', new_question_path %>
+	<% @questions.order("id desc").each do |q|  %>
+	<div class="col-md-12">
+		<div id="<%= q.id %>" class="question">
+			<div class="bs-callout bs-callout-primary">
+				<h4><%= q.title %></h4>
+				<p><%= q.text %></p>
+				<div class="input-group">
+					<form method="post" action="index.php">
+						<% q.sanswers.each do |a| %>
+							<span class="input-group-addon question-text" id="basic-addon1"><%= a.title %></span>
+							<span class="input-group-addon">
+								<input type="radio" aria-label="question1" name="<%= a.id %>">
+							</span>
+						<% end %>
+					</form>
+				</div>
+				<%= link_to 'Frage löschen', question_path(q), method: :delete %>
+				<%= link_to 'Antwort hinzufügen', question_path(q) %>
+				<%= link_to 'Frage bearbeiten', edit_question_path(q) %>
+			</div>
+		</div>
+	</div>
+	<% end %>
+</div>
