@@ -1,6 +1,6 @@
 class Question < ActiveRecord::Base
-	has_many :sanswers
-	has_many :ianswers
-	has_many :tfanswers
+	has_many :s_answers
+	has_many :i_answers
+	has_many :tf_answers
 	# validates :title, presence: true, length: {minimum: 5}
 end

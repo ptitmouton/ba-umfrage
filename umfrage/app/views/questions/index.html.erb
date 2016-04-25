@@ -37,7 +37,7 @@
 				<p><%= q.text %></p>
 				<div class="input-group">
 					<form method="post" action="index.php">
-						<% q.sanswers.each do |a| %>
+						<% q.s_answers.each do |a| %>
 							<span class="input-group-addon question-text" id="basic-addon1"><%= a.title %></span>
 							<span class="input-group-addon">
 								<input type="radio" aria-label="question1" name="<%= a.id %>">
