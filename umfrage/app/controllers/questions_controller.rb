@@ -33,9 +33,9 @@ class QuestionsController < ApplicationController
 	
 	def show
 		@question = Question.find(params[:id])
-		@answer_selection = @question.sanswers
-		@answer_image = @question.ianswers
-		@answer_textfield = @question.tfanswers
+		@answer_selection = @question.s_answers
+		@answer_image = @question.i_answers
+		@answer_textfield = @question.tf_answers
 	end
 
 	def destroy 

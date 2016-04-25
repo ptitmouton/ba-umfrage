@@ -16,7 +16,7 @@
 					<p><%= f.submit %></p>
 				<% end %>
 			<% when "image" %> 
-				<%= form_for(@question.ianswers.build) do |f| %>
+				<%= form_for([@question, @question.i_answers.build]) do |f| %>
 					<p>
 						<%= f.label :title %><br />
 						<%= f.text_field :title %>
@@ -24,7 +24,7 @@
 					<p><%= f.submit %></p>
 				<% end %>
 			<% when "textfield" %>
-				<%= form_for(@question.tfanswers.build) do |f| %>
+				<%= form_for([@question, @question.tf_answers.build]) do |f| %>
 					<p>
 						<%= f.label :title %><br />
 						<%= f.text_area :title %>

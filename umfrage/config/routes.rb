@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 	root 'questions#index'
 
 	resources :questions do 
-		resources :sanswers
-		resources :ianswers
-		resources :tfanswers
+		resources :s_answers
+		resources :i_answers
+		resources :tf_answers
 	end
 end
 
