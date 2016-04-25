@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160425161247) do
+ActiveRecord::Schema.define(version: 20160425220651) do
 
   create_table "i_answers", force: :cascade do |t|
     t.string   "image_front"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20160425161247) do
     t.text     "value"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "title"
   end
 
   add_index "i_answers", ["question_id"], name: "index_i_answers_on_question_id"
@@ -48,6 +49,7 @@ ActiveRecord::Schema.define(version: 20160425161247) do
     t.text     "value"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "title"
   end
 
   add_index "tf_answers", ["question_id"], name: "index_tf_answers_on_question_id"
